@@ -1,0 +1,31 @@
+{
+  "name": "discord.ts",
+  "version": "0.0.1-Alpha",
+  "description": "A powerful TypeScript library for interacting with the Discord API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "O'Doyle",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.4",
+    "@types/ws": "^8.5.5",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "form-data": "^4.0.0",
+    "fs": "^0.0.1-security",
+    "moment": "^2.29.4",
+    "node-fetch": "^2.6.1",
+    "opusscript": "^0.1.0",
+    "ws": "^8.13.0"
+  },
+  "engines": {
+    "node": ">=v12.x"
+  }
+}

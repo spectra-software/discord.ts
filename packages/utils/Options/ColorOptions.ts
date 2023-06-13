@@ -1,0 +1,15 @@
+export type ColorOptions =
+  | "DEFAULT"
+  | "BLUE"
+  | "WHITE"
+  | "RED"
+  | "PURPLE"
+  | "BLACK"
+  | "MAGENTA"
+  | "GREY"
+  | "YELLOW"
+  | "PINK"
+  | "ORANGE"
+  | "NAVY"
+  | "GREEN"
+  | "AQUA";
