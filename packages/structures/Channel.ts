@@ -36,7 +36,7 @@ export class Channel {
         options.files,
         {
           token: this._token,
-          method: "POST",
+          method: "post",
         }
       );
     }

@@ -123,7 +123,7 @@ export class SlashCommandsManager {
       }commands`,
       {
         token: this._token,
-        method: "POST",
+        method: "post",
         data:
           command instanceof SlashCommandBuilder
             ? JSON.stringify(command.getJSON())
@@ -151,7 +151,7 @@ export class SlashCommandsManager {
       }commands/${options.commandID}`,
       {
         token: this._token,
-        method: "PATCH",
+        method: "patch",
         data:
           command instanceof SlashCommandBuilder
             ? JSON.stringify(command.getJSON())

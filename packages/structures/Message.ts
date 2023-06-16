@@ -82,7 +82,7 @@ export class Message {
       `${DISCORD_API}channels/${this.channel.id}/pins/messages/${this.id}`,
       {
         token: this._token,
-        method: "PUT",
+        method: "put",
       }
     );
   }
@@ -97,7 +97,7 @@ export class Message {
       `${DISCORD_API}channels/${this.channel.id}/messages/${this.id}/threads`,
       {
         token: this._token,
-        method: "POST",
+        method: "post",
         data: JSON.stringify({
           name: name,
           auto_archive_duration:
@@ -116,7 +116,7 @@ export class Message {
       `${DISCORD_API}channels/${this.channel.id}/pins/messages/${this.id}`,
       {
         token: this._token,
-        method: "DELETE",
+        method: "delete",
       }
     );
   }
@@ -131,7 +131,7 @@ export class Message {
       }/reactions/${encodeURIComponent(emoji)}/@me`,
       {
         token: this._token,
-        method: "PUT",
+        method: "put",
       }
     );
   }

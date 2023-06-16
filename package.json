@@ -1,6 +1,6 @@
 {
   "name": "discord.ts",
-  "version": "0.0.1-Alpha",
+  "version": "0.0.2-Alpha",
   "description": "A powerful TypeScript library for interacting with the Discord API",
   "main": "index.js",
   "scripts": {

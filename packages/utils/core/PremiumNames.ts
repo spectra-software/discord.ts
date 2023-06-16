@@ -1,1 +1,1 @@
-export type PremiumNames = "none" | "Nitro Classic" | "Nitro";
+export type PremiumNames = "none" | "Nitro Classic" | "Nitro Boost";

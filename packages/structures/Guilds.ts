@@ -14,7 +14,7 @@ export class Guilds {
     const res: any = await RestManager.prototype.request(
       `${DISCORD_API}guilds/${id}`,
       {
-        method: "GET",
+        method: "get",
         token: this._token,
       }
     );

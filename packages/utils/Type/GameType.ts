@@ -1,6 +1,6 @@
 export type GameType =
-  | "PLAYING"
-  | "WATCHING"
-  | "STREAMING"
-  | "LISTENING"
-  | "COMPETING";
+  | "playing"
+  | "watching"
+  | "streaming"
+  | "listening"
+  | "competing";

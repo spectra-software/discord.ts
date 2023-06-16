@@ -19,7 +19,7 @@ export class Messages {
     const res: any = await RestManager.prototype.request(
       `${DISCORD_API}channels/${options.channelID}/messages/${id}`,
       {
-        method: "GET",
+        method: "get",
         token: this._token,
       }
     );

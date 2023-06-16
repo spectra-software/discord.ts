@@ -20,7 +20,7 @@ export class Guild {
     const res = await RestManager.prototype.request(
       `${DISCORD_API}guilds/${this.id}/welcome-screen`,
       {
-        method: "GET",
+        method: "get",
         token: this._token,
       }
     );

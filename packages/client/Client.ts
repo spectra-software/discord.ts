@@ -27,33 +27,33 @@ import { ClientGame } from "../utils/core/ClientGame";
 
 export declare interface Client extends EventEmitter {
   on(
-    event: "MESSAGE",
+    event: "message",
     listener: (message: Message) => void | Promise<void> | any
   ): this;
   on(
-    event: "SLASH_COMMAND_USED",
+    event: "slash_command_used",
     listener: (
       interaction: SlashCommandInteraction
     ) => void | Promise<void> | any
   ): this;
   on(
-    event: "BUTTON_CLICKED",
+    event: "button-clicked",
     listener: (button: ButtonInteraction) => void | Promise<void> | any
   ): this;
-  on(event: "READY", listener: () => void | any): this;
-  on(event: "ERROR", listener: (error: Error) => void | any): this;
-  on(event: "WARN", listener: (warn: string) => void | any): this;
+  on(event: "ready", listener: () => void | any): this;
+  on(event: "error", listener: (error: Error) => void | any): this;
+  on(event: "warn", listener: (warn: string) => void | any): this;
   on(
-    event: "GUILD_MEMBER_ADD",
+    event: "guild_member_add",
     listener: (member: GuildMember) => void | Promise<void> | any
   ): this;
   on(
-    event: "SELECT_MENU_CLICKED",
+    event: "select_menu_clicked",
     listener: (selectMenu: SelectMenuInteraction) => void | Promise<void> | any
   ): this;
-  on(event: "RECONNECTING", listener: (statusCode: string) => void | any): this;
+  on(event: "reconnecting", listener: (statusCode: string) => void | any): this;
   on(
-    event: "MESSAGE_REACTION_ADD",
+    event: "message_reaction_add",
     listener: (reaction: MessageReaction) => void | Promise<void> | any
   ): this;
 }
@@ -78,11 +78,11 @@ export class Client extends EventEmitter {
     this._patchData(options);
   }
 
-  public async connect(token: string): Promise<void> {
+  public async login(token: string): Promise<void> {
     if (!token || typeof token !== "string")
-      throw new SyntaxError("[CLIENT] No token provided");
+      throw new SyntaxError("[CLIENT-LOGIN] No token provided");
     if (token.length !== 72)
-      throw new SyntaxError("[CLIENT] Invalid token provided");
+      throw new SyntaxError("[CLIENT-LOGIN] Invalid token provided");
     this.user = new ClientUser(token, this);
     this._token = token;
     this.users = new Users(this._token);
@@ -97,7 +97,7 @@ export class Client extends EventEmitter {
     options?: GameOptions
   ): Promise<ClientGame> {
     if (!game || typeof game !== "string")
-      throw new SyntaxError("[CLIENT] No game provided");
+      throw new SyntaxError("[CLIENT-SETGAME] No game provided");
     this.game = {
       name: game,
       type:
@@ -125,9 +125,9 @@ export class Client extends EventEmitter {
 
   public async setStatus(status: StatusType): Promise<void> {
     if (!status || typeof status !== "string")
-      throw SyntaxError("[CLIENT] No status provided");
+      throw SyntaxError("[CLIENT-SETSTATUS] No status provided");
     if (!statusType.includes(status.toUpperCase()))
-      throw new SyntaxError("[CLIENT] Invalid status provided");
+      throw new SyntaxError("[CLIENT-SETSTATUS] Invalid status provided");
     this.status = status.toLowerCase();
     if (this.WS.online === true)
       this.WS.sendToWS(
@@ -141,7 +141,7 @@ export class Client extends EventEmitter {
       (this.WS.AFK === true && state === true) ||
       (this.WS.AFK === false && state === false)
     )
-      throw new Error("[CLIENT] This status is already in use");
+      throw new Error("[CLIENT-SETAFK] This status is already in use");
     this.WS.AFK =
       state && typeof state === "boolean"
         ? state

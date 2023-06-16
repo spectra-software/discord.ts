@@ -1,1 +1,1 @@
-export type StatusType = "ONLINE" | "IDLE" | "DND" | "INVISIBLE";
+export type StatusType = "online" | "idle" | "dnd" | "invisible";

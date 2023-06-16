@@ -12,7 +12,7 @@ export class Badges {
           this.nitro = "Nitro Classic";
           break;
         case 2:
-          this.nitro = "Nitro";
+          this.nitro = "Nitro Boost";
           break;
         default:
           this.nitro = "none";

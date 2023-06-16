@@ -13,7 +13,7 @@ export class Users {
     const res: any = await RestManager.prototype.request(
       `${DISCORD_API}users/${id}`,
       {
-        method: "GET",
+        method: "get",
         token: this._token,
       }
     );

@@ -17,7 +17,7 @@ export class GuildStickers {
     const res = await RestManager.prototype.request(
       `${DISCORD_API}guilds/${this.guildID}/stickers/${id}`,
       {
-        method: "GET",
+        method: "get",
         token: this._token,
       }
     );

@@ -50,13 +50,13 @@ export class WebhookMessage {
       const deleteTimeout = Number(timeout) * 1000;
       setTimeout(() => {
         this.restManager.request(this.url, {
-          method: "DELETE",
+          method: "delete",
         });
       }, deleteTimeout);
       return;
     } else {
       this.restManager.request(this.url, {
-        method: "DELETE",
+        method: "delete",
       });
       return;
     }
@@ -77,14 +77,14 @@ export class WebhookMessage {
       const editTimeout = Number(options.timeout) * 1000;
       setTimeout(() => {
         this.restManager.request(this.url, {
-          method: "PATCH",
+          method: "patch",
           data: JSON.stringify(payload),
         });
       }, editTimeout);
       return this;
     }
     this.restManager.request(this.url, {
-      method: "PATCH",
+      method: "patch",
       data: JSON.stringify(payload),
     });
     return this;

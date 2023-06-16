@@ -47,7 +47,7 @@ export class Member {
       `${DISCORD_API}guilds/${this.guildID}/members/${this.id}/roles/${roleID}`,
       {
         token: this._token,
-        method: "PUT",
+        method: "put",
       }
     );
   }

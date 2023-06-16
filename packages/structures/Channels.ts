@@ -14,7 +14,7 @@ export class Channels {
     const res: any = await RestManager.prototype.request(
       `${DISCORD_API}channels/${id}`,
       {
-        method: "GET",
+        method: "get",
         token: this._token,
       }
     );

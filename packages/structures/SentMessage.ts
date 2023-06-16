@@ -37,7 +37,7 @@ export class SentMessage {
       `${DISCORD_API}channels/${this.channel.id}/messages/${this.id}`,
       {
         token: this._token,
-        method: "DELETE",
+        method: "delete",
       }
     );
   }
@@ -95,7 +95,7 @@ export class SentMessage {
       `${DISCORD_API}channels/${this.channel.id}/messages/${this.id}`,
       {
         token: this._token,
-        method: "PATCH",
+        method: "patch",
         data: JSON.stringify(payload),
       }
     );
@@ -106,7 +106,7 @@ export class SentMessage {
       `${DISCORD_API}channels/${this.channel.id}/pins/messages/${this.id}`,
       {
         token: this._token,
-        method: "PUT",
+        method: "put",
       }
     );
   }
@@ -116,7 +116,7 @@ export class SentMessage {
       `${DISCORD_API}channels/${this.channel.id}/pins/messages/${this.id}`,
       {
         token: this._token,
-        method: "DELETE",
+        method: "delete",
       }
     );
   }
@@ -131,7 +131,7 @@ export class SentMessage {
       }/reactions/${encodeURIComponent(emoji)}/@me`,
       {
         token: this._token,
-        method: "PUT",
+        method: "put",
       }
     );
   }

@@ -55,7 +55,7 @@ export class ClientUser {
     if (!username || typeof username !== "string")
       throw new SyntaxError("[CLIENT-USER] No username provided");
     return await RestManager.prototype.request(`${DISCORD_API}users/@me`, {
-      method: "PATCH",
+      method: "patch",
       token: this._token,
       data: JSON.stringify({ username: username }),
     });
@@ -67,7 +67,7 @@ export class ClientUser {
     if (!_testURL(avatarURL))
       throw new Error("[CLIENT-USER] Invalid avatar URL provided");
     return await RestManager.prototype.request(`${DISCORD_API}users/@me`, {
-      method: "PATCH",
+      method: "patch",
       token: this._token,
       data: JSON.stringify({ avatar: avatarURL }),
     });
@@ -77,7 +77,7 @@ export class ClientUser {
     const res = await RestManager.prototype.request(
       `${DISCORD_API}users/@me/guilds`,
       {
-        method: "GET",
+        method: "get",
         token: this._token,
       }
     );
@@ -88,7 +88,7 @@ export class ClientUser {
     const res: any = await RestManager.prototype.request(
       `${DISCORD_API}gateway/bot`,
       {
-        method: "GET",
+        method: "get",
         token: this._token,
       }
     );
@@ -101,7 +101,7 @@ export class ClientUser {
       `${DISCORD_API}users/@me`,
       {
         token: this._token,
-        method: "GET",
+        method: "get",
       }
     );
     const parsedRes = JSON.parse(res);

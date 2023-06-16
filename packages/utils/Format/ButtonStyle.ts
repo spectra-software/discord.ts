@@ -1,1 +1,1 @@
-export type ButtonStyle = "BLURPLE" | "GREY" | "GREEN" | "RED" | "URL";
+export type ButtonStyle = "blurple" | "gray" | "green" | "red" | "url";

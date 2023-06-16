@@ -69,7 +69,7 @@ export class Author {
     const res = await RestManager.prototype.request(
       `${DISCORD_API}users/${this.id}`,
       {
-        method: "GET",
+        method: "get",
         token: this._token,
       }
     );
